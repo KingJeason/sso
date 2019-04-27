@@ -6,4 +6,8 @@ module.exports = {
   // static: {
   //   enable: true,
   // }
+  // assets: {
+  //   enable: true,
+  //   package: 'egg-view-assets',
+  // },
 };

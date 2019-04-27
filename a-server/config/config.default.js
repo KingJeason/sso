@@ -18,6 +18,12 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+  config.casServer = 'http://xigua-sso.com/login';
+  // config.view = {
+  //   mapping: {
+  //     '.html': 'assets',
+  //   },
+  // };
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
