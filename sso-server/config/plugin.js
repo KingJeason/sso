@@ -6,4 +6,13 @@ module.exports = {
   // static: {
   //   enable: true,
   // }
+  ejs: {
+    enable: true,
+    package: 'egg-view-ejs',
+  },
+  // assets: {
+  //   enable: true,
+  //   package: 'egg-view-assets',
+  // },
+
 };

@@ -18,7 +18,13 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
-  config.casServer = 'http://xigua-sso.com/login';
+  config.casServer = 'http://xigua-sso.com';
+  config.session = {
+    key: 'a-sessionID',
+    maxAge: 24 * 3600 * 1000, // 1 天
+    httpOnly: true,
+    encrypt: true,
+  };
   // config.view = {
   //   mapping: {
   //     '.html': 'assets',

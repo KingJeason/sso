@@ -17,6 +17,38 @@ module.exports = appInfo => {
 
   // add your middleware config here
   config.middleware = [];
+  config.view = {
+    defaultViewEngine: 'ejs',
+    mapping: {
+      '.ejs': 'ejs',
+    },
+  };
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+    domainWhiteList: [ '.a.com', '.b.com' ],
+  };
+
+  config.session = {
+    key: 'TGC',
+    maxAge: 24 * 3600 * 1000, // 1 天
+    httpOnly: true,
+    encrypt: true,
+  };
+
+  config.ejs = {
+    layout: 'layout.ejs',
+  };
+  // config.view = {
+  //   mapping: {
+  //     '.js': 'assets',
+  //   },
+  // };
+  // config.devServer = {
+  //   command: 'roadhog dev',
+  //   port: 3099,
+  // };
 
   // add your user config here
   const userConfig = {

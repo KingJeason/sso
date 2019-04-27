@@ -6,5 +6,6 @@
 module.exports = app => {
   const { router, controller, middleware } = app;
   const checkCookie = middleware.checkCookie();
-  router.get('*', checkCookie, controller.home.index);
+  const checkTicket = middleware.checkTicket();
+  router.get('*', checkTicket, checkCookie, controller.home.index);
 };
