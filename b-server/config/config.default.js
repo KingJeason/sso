@@ -16,13 +16,25 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1556350693451_2225';
 
   // add your middleware config here
+  // add your middleware config here
   config.middleware = [];
 
+  config.casServer = 'http://xigua-sso.com';
+  config.session = {
+    key: 'b-sessionID',
+    maxAge: 24 * 3600 * 1000, // 1 天
+    httpOnly: true,
+    encrypt: true,
+  };
+  // config.view = {
+  //   mapping: {
+  //     '.html': 'assets',
+  //   },
+  // };
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
   };
-
   return {
     ...config,
     ...userConfig,
