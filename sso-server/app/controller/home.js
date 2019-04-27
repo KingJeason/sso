@@ -52,13 +52,13 @@ class HomeController extends Controller {
       const ticket = token + name;
       // 给 sso.com 注入cookie
       ctx.session.TGC = ticket;
-      fs.readFile(ticketPath, 'utf8', (err, data) => {
+      fs.readFile(ticketPath, 'utf8', (err, TGT) => {
         if (err) throw err;
-        if (!data) data = '{}';
-        data = JSON.parse(data);
+        if (!TGT) TGT = '{}';
+        TGT = JSON.parse(TGT);
         // 以ticket为key
-        data[ticket] = name;
-        fs.writeFile(ticketPath, JSON.stringify(data), err => {
+        TGT[ticket] = name;
+        fs.writeFile(ticketPath, JSON.stringify(TGT), err => {
           if (err) throw err;
         });
       });
